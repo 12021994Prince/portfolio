@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+
+/* Design tokens. Tailwind v4 turns these into utilities like bg-bg, text-fg, text-accent. */
+@theme {
+  --color-bg: #07080c;
+  --color-surface: #11131a;
+  --color-fg: #e8eaf0;
+  --color-muted: #8a90a2;
+  --color-accent: #7c5cff;
+  --color-accent-2: #22d3ee;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer base {
+  /* Only <html> paints the page background, so the fixed 3D canvas is never hidden behind it. */
+  html {
+    @apply bg-bg;
+    scroll-behavior: smooth;
+  }
+
+  html.lenis {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply min-h-full text-fg font-sans antialiased;
+  }
+}
+
+/* Honor the OS "reduce motion" setting site-wide. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
