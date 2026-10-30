@@ -19,7 +19,8 @@ function Job({ job, defaultOpen }) {
 
   return (
     <li className="relative" data-aos="fade-up">
-      <span className="absolute top-5 -left-[22px] h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-bg md:top-2 md:-left-[44px]" />
+      {/* Dot centred on the 1px timeline line: list padding (20px / 40px) minus half the line width, then shift back by half the dot. */}
+      <span className="absolute top-5 -left-[19.5px] h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-accent ring-4 ring-bg md:top-2 md:-left-[39.5px]" />
       <div className="rounded-2xl border border-white/5 bg-surface/85 md:rounded-none md:border-0 md:bg-transparent">
         <button
           type="button"
