@@ -38,6 +38,15 @@
 
   body {
     @apply min-h-full text-fg font-sans antialiased;
+    -webkit-tap-highlight-color: transparent; /* no grey flash on tap, like a native app */
+  }
+}
+
+/* Horizontal swipe rows: scrollable but without a visible scrollbar. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 

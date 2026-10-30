@@ -1,6 +1,7 @@
 import Experience3D from './canvas/Experience.jsx'
 import Marquee from './components/Marquee.jsx'
 import Navbar from './components/Navbar.jsx'
+import TabBar from './components/TabBar.jsx'
 import { useAos } from './hooks/useAos.js'
 import { useReducedMotion } from './hooks/useReducedMotion.js'
 import { useSmoothScroll } from './hooks/useSmoothScroll.js'
@@ -19,7 +20,7 @@ export default function App() {
     <>
       <Experience3D />
       <Navbar />
-      <main className="relative z-10 overflow-x-clip">
+      <main className="relative z-10 overflow-x-clip pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0">
         <Hero />
         <Marquee />
         <About />
@@ -27,6 +28,7 @@ export default function App() {
         <Experience />
         <Contact />
       </main>
+      <TabBar />
     </>
   )
 }

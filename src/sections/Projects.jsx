@@ -38,17 +38,17 @@ function Card({ project, index }) {
     <TiltCard
       as={linked ? 'a' : 'div'}
       {...(linked ? { href: project.url, target: '_blank', rel: 'noreferrer' } : {})}
-      className="group block h-full overflow-hidden rounded-2xl border border-white/5 bg-surface/90 transition-colors hover:border-accent/50"
+      className="group block h-full overflow-hidden rounded-2xl border border-white/5 bg-surface/90 transition hover:border-accent/50 active:scale-[0.98]"
     >
       <div className="aspect-[16/10] overflow-hidden border-b border-white/5">
         <Cover project={project} />
       </div>
-      <div className="flex items-end justify-between gap-4 p-5">
+      <div className="flex items-end justify-between gap-3 p-3.5 md:gap-4 md:p-5">
         <div>
-          <span className="text-xs text-muted">{String(index + 1).padStart(2, '0')}</span>
-          <h3 className="mt-1 font-display text-lg font-semibold">{project.name}</h3>
+          <span className="text-[11px] text-muted md:text-xs">{String(index + 1).padStart(2, '0')}</span>
+          <h3 className="mt-0.5 font-display text-[15px] font-semibold md:mt-1 md:text-lg">{project.name}</h3>
         </div>
-        <span className="shrink-0 text-sm text-muted transition group-hover:text-accent-2">
+        <span className="shrink-0 text-xs text-muted transition group-hover:text-accent-2 md:text-sm">
           {linked ? `${host} ↗` : 'Shopify store'}
         </span>
       </div>
@@ -60,9 +60,17 @@ export default function Projects() {
   return (
     <Section id="projects">
       <SectionHeading eyebrow="Selected work" title="Live stores I've built." />
-      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-aos-stagger="flip-up" data-aos-step="0.15">
+      <div className="-mt-2 mb-3 flex items-center justify-between text-xs text-muted md:hidden">
+        <span>{projects.length} live stores</span>
+        <span>Swipe →</span>
+      </div>
+      <ul
+        className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-4 px-4 pb-1 md:mx-0 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3"
+        data-aos-stagger="flip-up"
+        data-aos-step="0.15"
+      >
         {projects.map((p, i) => (
-          <li key={p.name}>
+          <li key={p.name} className="w-[82%] shrink-0 snap-start md:w-auto">
             <Card project={p} index={i} />
           </li>
         ))}

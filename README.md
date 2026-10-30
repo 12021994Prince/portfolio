@@ -58,6 +58,10 @@ public/        favicon, link-preview image, store screenshots
 - Pixel ratio starts at 1.5× and drops to 1× automatically if the frame rate falls.
 - On phones and portrait tablets the 3D object only appears in the hero, so it never covers text.
 
+## Mobile layout
+
+On phones the site behaves like an app: a floating bottom tab bar (`src/components/TabBar.jsx`) highlights the current section, skills and projects are swipeable carousels, jobs are tap-to-expand cards, and contact options are list rows. All of this switches to the desktop layout at the `md` breakpoint (768px).
+
 ## Deploy (free, on Vercel)
 
 1. Push this repo to GitHub.
