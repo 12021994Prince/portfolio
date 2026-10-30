@@ -66,7 +66,7 @@ On phones the site behaves like an app: a floating bottom tab bar (`src/componen
 
 1. Push this repo to GitHub.
 2. Sign in at https://vercel.com with GitHub, choose **Add New → Project**, and import the repo.
-3. Name the project `mahesh-hadiyal` and click **Deploy**. Vercel detects Vite automatically.
+3. Click **Deploy**. Vercel detects Vite automatically.
 4. Every later `git push` redeploys the site.
 
-`VITE_SITE_URL` in `.env` is used for link previews. If your live URL differs from `https://mahesh-hadiyal.vercel.app`, update it, then commit and push.
+`VITE_SITE_URL` in `.env` is used for link previews. If your live URL differs from `https://portfolio-psi-two-4lugqx212o.vercel.app`, update it, then commit and push.
