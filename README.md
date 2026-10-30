@@ -69,4 +69,4 @@ On phones the site behaves like an app: a floating bottom tab bar (`src/componen
 3. Click **Deploy**. Vercel detects Vite automatically.
 4. Every later `git push` redeploys the site.
 
-`VITE_SITE_URL` in `.env` is used for link previews. If your live URL differs from `https://portfolio-psi-two-4lugqx212o.vercel.app`, update it, then commit and push.
+`VITE_SITE_URL` in `.env` is used for link previews. If your live URL differs from `https://maheshhadiyal.vercel.app`, update it, then commit and push.
